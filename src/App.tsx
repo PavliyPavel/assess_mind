@@ -1,11 +1,23 @@
 import React from 'react';
-import { AuthPage } from './pages/auth-page';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
+import MainForm from './pages/main-form';
+import AuthContext from './context/auth-context';
+import { AuthForm } from './pages/auth-page/auth-form';
 
 function App() {
   return (
-    <div className="App">
-        <AuthPage />
-    </div>
+    <AuthContext.Provider value={{ isAuth: false }}>
+      <Router>
+        <Routes>
+          <Route path="/auth" element={<AuthForm/>}/>
+          <Route path="/" element={<MainForm/>}/>
+        </Routes>
+      </Router>
+    </AuthContext.Provider>
   );
 }
 

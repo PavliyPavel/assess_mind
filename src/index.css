@@ -10,9 +10,39 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+
+}
+
+
+
+#root {
+  display: flex;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+ul {
+  list-style: "none";
+}
+
+ul {
+  list-style: "none";
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+a { 
+  color: white;
+  outline: 0; 
+  text-decoration: none;
+}
+
+a:focus { 
+  text-decoration: none;
+  outline: 0; 
 }

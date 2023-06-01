@@ -1,0 +1,20 @@
+.auth-form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.auth-form__subtitle{
+    color: rgb(180, 184, 193);
+}
+
+.auth-form__form{
+    max-width: 360px;
+}
+
+.authPage{
+    background: no-repeat url(./rampage.jpg);
+    background-size: cover;
+}
