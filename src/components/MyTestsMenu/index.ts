@@ -1,3 +1,3 @@
-import TestsMenu from './component';
+import MyTestsMenu from './component';
 
-export default TestsMenu;
+export default MyTestsMenu;

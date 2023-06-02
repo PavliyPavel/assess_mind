@@ -26,6 +26,7 @@ import TestsMenu from '../../components/TestsMenu';
 import TestCreator from '../../components/TestCreator';
 import MyTestsMenu from '../../components/MyTestsMenu';
 import MyTestHeader from '../../components/MyTestHeader';
+import UserProfile from '../../components/UserProfile';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -71,7 +72,7 @@ const HeaderTest = styled(Paper)(({ theme }) => ({
   
 }));
 
-export default function MainForm() {
+export default function MainHeaderForm() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -160,9 +161,17 @@ export default function MainForm() {
     </Menu>
   );
 
+  function navigateToCreateTest(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    navigator('/create');
+  }
+  function navigateToMyTests(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    navigator('/mytests');
+  }
+  function navigateToMe(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
+    navigator('/Me');
+  }
   return (
     
-    <Stack flexGrow ={1} >
       
       <AppBar position="static"
       >
@@ -197,8 +206,12 @@ export default function MainForm() {
               inputProps={{ 'aria-label': 'search' }}
             />
           </Search>
-            <Button  size="small" variant="outlined"  sx={{background: '#dddddd',color: 'white', m: 2 }}>Создать тест</Button>
-            <Button size="small" variant="outlined"  sx={{color: 'white',background: 'black'}}>Мои тесты</Button>
+            <Button  size="small" variant="outlined"  sx={{background: '#dddddd',color: 'white', m: 2 }}
+              onClick={navigateToCreateTest}
+            >Создать тест</Button>
+            <Button size="small" variant="outlined"  sx={{color: 'white',background: 'black'}}
+            onClick={navigateToMyTests}
+            >Мои тесты</Button>
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton
               size="large"
@@ -206,7 +219,7 @@ export default function MainForm() {
               aria-label="account of current user"
               aria-controls={menuId}
               aria-haspopup="true"
-              //onClick={handleProfileMenuOpen}
+              onClick={navigateToMe}
               color="inherit"
             >
               <AccountCircle />
@@ -215,19 +228,7 @@ export default function MainForm() {
           </Box>
         </Toolbar>
       </AppBar>
-      <Stack
-      sx={{
-        background: 'linear-gradient(to left bottom, #7a95ec, rgb(255,255,255))',
-        backgroundSize: 'cover'
-      }}
-      p={2}
-      alignItems={'center'}
-      height={1}
-      overflow={'auto'}
-      >
-       <MyTestsMenu></MyTestsMenu>
-      </Stack>
-    </Stack>
+      
     
 
     

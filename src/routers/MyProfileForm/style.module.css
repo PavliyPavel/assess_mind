@@ -1,0 +1,22 @@
+.auth-form{
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.auth-form__subtitle{
+    color: rgb(180, 184, 193);
+}
+
+.auth-form__form{
+    max-width: 360px;
+}
+.pagination{
+    align-items: center;
+}
+.logo{
+    background: no-repeat url(../../Img/logo.png);
+    background-size: cover;
+} 

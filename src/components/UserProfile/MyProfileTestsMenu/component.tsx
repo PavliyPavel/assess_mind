@@ -5,8 +5,7 @@ import Box from '@mui/material/Box';
 import { Button, Grid, InputBase, Pagination, PaginationItem, Paper, Stack } from '@mui/material';
 import { ArrowBack, ArrowForward, BorderAll, BorderAllRounded } from '@mui/icons-material';
 import styles from'./style.module.css'
-import TestHeader from '../TestHeader/component';
-import MyTestHeader from '../MyTestHeader';
+import MyProfileTestHeader from '../MyProfileTestHeader';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -53,14 +52,14 @@ const HeaderTest = styled(Paper)(({ theme }) => ({
   
 }));
 
-export default function MyTestsMenu() {
+export default function MyProfileTestsMenu() {
   return (
-      <Stack padding={1}  className={styles.pagination} spacing={1} flexGrow={1}>
+      <Stack padding={2}  className={styles.pagination} spacing={1} flexGrow={1}>
         <Box display="flex" flexGrow={1} sx={{alignContent:"center"}}>
           <Grid container spacing={{ xs: 2, sm: 2, md: 2 }} columns={{ xs: 6, sm: 9, md: 12 }}>
             {Array.from(Array(8)).map((_, index) => (
-              <Grid item width={150} xs={3} sm={3} md={3} key={index}>
-                <MyTestHeader />
+              <Grid item width={120} xs={3} sm={3} md={3} key={index}>
+                <MyProfileTestHeader />
               </Grid>
             ))}
           </Grid>
